@@ -9,8 +9,8 @@
                     <div class="row g-3">
                         <div class="col-sm-6">
                             <label for="name" class="form-label">Name</label>
-                            <input type="text" class="form-control" id="name" placeholder="Enter your name" name="Name" value=""
-                                required="true">
+                            <input type="text" class="form-control" id="name" placeholder="Enter your name" name="Name"
+                                value="" required="true">
                         </div>
 
                         <div class="col-12">
@@ -27,12 +27,14 @@
 
                         <div class="col-12">
                             <label for="subject" class="form-label">Subject</label>
-                            <input type="text" class="form-control" id="subject" placeholder="Subject" required="true" name="subject" value="">
+                            <input type="text" class="form-control" id="subject" placeholder="Subject" required="true"
+                                name="subject" value="">
                         </div>
 
                         <div class="col-12">
                             <label for="message" class="form-label">Message</label>
-                            <input type="text" class="form-control" id="message" placeholder="Your Message" required="true" name="message" value="">
+                            <input type="text" class="form-control" id="message" placeholder="Your Message" required="true"
+                                name="message" value="">
                         </div>
 
                     </div>
@@ -61,8 +63,7 @@
                         <p> Your Address ….. </p>
                     </div>
                     <div class="col-4">
-                        <a class="bg-tvas px-3 py-2 rounded text-white mb-2 d-inline-block"><i
-                                class="bi bi-phone"></i></a>
+                        <a class="bg-tvas px-3 py-2 rounded text-white mb-2 d-inline-block"><i class="bi bi-phone"></i></a>
                         <p>+91- 90000000</p>
                     </div>
                     <div class="col-4">
@@ -78,50 +79,62 @@
 </template>
 
 <style>
-    .btn-tvas{
-        color: white;
-        background-color: #fe8d41;
-        border-color: #fe8d41;
-    }
-    .btn-tvas:hover{
-        color: white;
-        background-color: #ff9933;
-        border-color: #ff9933;
-    }
-    .bg-tvas{
-        background-color: #fe8d41;
-    }
+.btn-tvas {
+    color: white;
+    background-color: #fe8d41;
+    border-color: #fe8d41;
+}
+
+.btn-tvas:hover {
+    color: white;
+    background-color: #ff9933;
+    border-color: #ff9933;
+}
+
+.bg-tvas {
+    background-color: #fe8d41;
+}
 </style>
 
 <script>
-export default {
-  methods: {
-    submitForm() {
-      // Serialize form data into FormData
-      const formElement = document.getElementById("myForm");
-      const formData = new FormData(formElement);
+import Swal from 'sweetalert2/dist/sweetalert2.js'
 
-      // Send a POST request to the Google Apps Script URL using Fetch API
-      fetch("https://script.google.com/macros/s/AKfycbxtV2QPZwsh5T8EwkCfBn7H6CKTnjgAus3cJEF9QWFiPLXGPAhSeuRkyKPif3dilfWl/exec", {
-        method: "POST",
-        body: formData,
-      })
-      .then(response => {
-        // Handle the response as needed
-        if (response.ok) {
-          // Form submitted successfully
-          alert("Form submitted successfully");
-          // Redirect to a website
-          window.location.href = "http://localhost:8080/contact";
-        } else {
-          // Handle errors if the submission fails
-          console.error("Form submission failed");
+export default {
+    methods: {
+        submitForm() {
+            // Serialize form data into FormData
+            const formElement = document.getElementById("myForm");
+            const formData = new FormData(formElement);
+
+            // Send a POST request to the Google Apps Script URL using Fetch API
+            fetch("https://script.google.com/macros/s/AKfycbxtV2QPZwsh5T8EwkCfBn7H6CKTnjgAus3cJEF9QWFiPLXGPAhSeuRkyKPif3dilfWl/exec", {
+                method: "POST",
+                body: formData,
+            })
+                .then(response => {
+                    // Handle the response as needed
+                    if (response.ok) {
+                        // Form submitted successfully
+                        Swal.fire({
+                            icon: "success",
+                            title: "Submitted",
+                            text: "Form Submitted Successfully"
+                        });
+                        // Redirect to a website
+                        window.location.href = "https://tvas.web.app/";
+                    } else {
+                        // Handle errors if the submission fails
+                        Swal.fire({
+                            icon: "error",
+                            title: "Oops...",
+                            text: "Form Submission Failed!",
+                        });
+                    }
+                })
+                .catch(error => {
+                    console.error("An error occurred:", error);
+                });
         }
-      })
-      .catch(error => {
-        console.error("An error occurred:", error);
-      });
     }
-  }
 };
 </script>

@@ -80,6 +80,12 @@ export default {
                 }
             ]
         }
+    },
+    methods: {
+        close_offcanvas() {
+            this.$refs.closeOC.click()
+            window.scroll(0, 0)
+        }
     }
 }
 </script>
