@@ -11,7 +11,7 @@
                 <h4 class="my-3">Send us a message</h4>
                 <form class="needs-validation" @submit.prevent="submitForm" id="myForm">
                     <div class="row g-3">
-                        <div class="col-sm-6">
+                        <div class="col-12">
                             <label for="name" class="form-label">Name</label>
                             <input type="text" class="form-control" id="name" placeholder="Enter your name" name="Name"
                                 value="" required="true">
