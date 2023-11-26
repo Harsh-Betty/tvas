@@ -1,12 +1,15 @@
 <template>
   <Header />
   <main class="container-fluid">
-    <router-view />
+    <router-view class="animated-page"/>
   </main>
   <Footer />
 </template>
 
 <style>
+/* Option 2: Import via CSS */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css");
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -16,6 +19,19 @@
 
 a {
   text-decoration: none;
+}
+
+.animated-page{
+  animation: page-animation 0.3s;
+}
+@keyframes page-animation {
+  0%{
+    opacity: 20%;
+    transform: translateY(10px);
+  }
+  100%{
+    opacity: 100%;
+  }
 }
 
 main {

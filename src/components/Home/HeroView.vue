@@ -16,7 +16,7 @@
 
 <style>
 #home-slider {
-	padding: 0 0 10vh 0;
+	padding: 0 0 0 0;
 }
 
 .splide__arrow:hover:not(:disabled) svg {

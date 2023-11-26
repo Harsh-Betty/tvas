@@ -93,19 +93,19 @@
                         title: 'Spices',
                         description: 'Minima consequatur architecto eaque assumenda ipsam itaque quia eum in doloribus debitis impedit ut minus tenetur corrupti excepturi ullam.',
                         path: 'spice.png',
-                        url: '/'
+                        url: '/products'
                     },
                     {
                         title: 'Honey',
                         description: 'Minima consequatur architecto eaque assumenda ipsam itaque quia eum in doloribus debitis impedit ut minus tenetur corrupti excepturi ullam.',
                         path: 'honey.png',
-                        url: '/'
+                        url: '/products'
                     },
                     {
                         title: 'Fertilizers',
                         description: 'Minima consequatur architecto eaque assumenda ipsam itaque quia eum in doloribus debitis impedit ut minus tenetur corrupti excepturi ullam.',
                         path: 'fertilizer.png',
-                        url: '/'
+                        url: '/products'
                     },
                 ],
             };
