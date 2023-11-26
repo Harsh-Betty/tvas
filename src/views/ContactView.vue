@@ -1,4 +1,8 @@
 <template>
+    <div id="overlay" style="display: none;"></div>
+    <div id="loader" class="spinner-border text-warning" role="status" style="display: none;">
+        <span class="visually-hidden">Loading...</span>
+    </div>
     <section class="container sub_page pt-5">
         <!--Contact heading-->
         <div class="row">
@@ -79,6 +83,33 @@
 </template>
 
 <style>
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: blur(8xp);
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Adjust opacity here */
+    z-index: 9998;
+    /* Ensure the overlay is on top */
+}
+
+#loader {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 9999;
+}
+
+.blur-effect {
+    filter: blur(2px);
+    /* Adjust the blur intensity as needed */
+    transition: filter 0.3s ease;
+    /* Smooth transition for the blur effect */
+}
+
 .btn-tvas {
     color: white;
     background-color: #fe8d41;
@@ -97,12 +128,29 @@
 </style>
 
 <script>
-import Swal from 'sweetalert2/dist/sweetalert2.js'
+import swal from 'sweetalert'
 
 export default {
     methods: {
         submitForm() {
             // Serialize form data into FormData
+            function showLoader() {
+                const overlay = document.getElementById("overlay");
+                overlay.style.display = "block";
+
+                const loader = document.getElementById("loader");
+                loader.style.display = "block";
+            }
+            function hideLoader() {
+                const overlay = document.getElementById("overlay");
+                overlay.style.display = "none";
+
+                const loader = document.getElementById("loader");
+                loader.style.display = "none";
+            }
+
+            showLoader();
+
             const formElement = document.getElementById("myForm");
             const formData = new FormData(formElement);
 
@@ -112,26 +160,29 @@ export default {
                 body: formData,
             })
                 .then(response => {
+                    hideLoader(); // Hide loader on fetch response
+
                     // Handle the response as needed
                     if (response.ok) {
                         // Form submitted successfully
-                        Swal.fire({
+                        swal({
                             icon: "success",
                             title: "Submitted",
-                            text: "Form Submitted Successfully"
+                            text: "Your form is successfully submitted",
                         });
-                        // Redirect to a website
-                        window.location.href = "https://tvas.web.app/";
+                        formElement.reset();
+                        return false;
                     } else {
                         // Handle errors if the submission fails
-                        Swal.fire({
+                        swal({
                             icon: "error",
-                            title: "Oops...",
-                            text: "Form Submission Failed!",
+                            title: "Error",
+                            text: "Form not submitted",
                         });
                     }
                 })
                 .catch(error => {
+                    hideLoader(); // Hide loader on fetch error
                     console.error("An error occurred:", error);
                 });
         }
