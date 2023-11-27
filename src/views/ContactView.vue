@@ -1,52 +1,12 @@
 <template>
-    <div id="overlay" style="display: none;"></div>
-    <div id="loader" class="spinner-border text-warning" role="status" style="display: none;">
-        <span class="visually-hidden">Loading...</span>
-    </div>
+    <LoaderOverlay />
     <section class="container sub_page pt-5">
         <!--Contact heading-->
         <div class="row">
             <!--Grid column-->
             <div class="col-sm-12 mb-4 col-md-5 card">
                 <h4 class="my-3">Send us a message</h4>
-                <form class="needs-validation" @submit.prevent="submitForm" id="myForm">
-                    <div class="row g-3">
-                        <div class="col-12">
-                            <label for="name" class="form-label">Name</label>
-                            <input type="text" class="form-control" id="name" placeholder="Enter your name" name="Name"
-                                value="" required="true">
-                        </div>
-
-                        <div class="col-12">
-                            <label for="phone" class="form-label">Contact</label>
-                            <input type="number" class="form-control" id="phone" placeholder="0000-000-000" name="Contact"
-                                required="true">
-                        </div>
-
-                        <div class="col-12">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="you@example.com" name="Email"
-                                required="true">
-                        </div>
-
-                        <div class="col-12">
-                            <label for="subject" class="form-label">Subject</label>
-                            <input type="text" class="form-control" id="subject" placeholder="Subject" required="true"
-                                name="subject" value="">
-                        </div>
-
-                        <div class="col-12">
-                            <label for="message" class="form-label">Message</label>
-                            <input type="text" class="form-control" id="message" placeholder="Your Message" required="true"
-                                name="message" value="">
-                        </div>
-
-                    </div>
-
-                    <hr class="my-3">
-
-                    <button class="w-100 btn btn-tvas btn-lg my-3" type="submit">Submit</button>
-                </form>
+                <ContactForm />
             </div>
             <!--Grid column-->
 
@@ -82,110 +42,13 @@
     </section>
 </template>
 
-<style>
-#overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    filter: blur(8xp);
-    background-color: rgba(0, 0, 0, 0.5);
-    /* Adjust opacity here */
-    z-index: 9998;
-    /* Ensure the overlay is on top */
-}
-
-#loader {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    z-index: 9999;
-}
-
-.blur-effect {
-    filter: blur(2px);
-    /* Adjust the blur intensity as needed */
-    transition: filter 0.3s ease;
-    /* Smooth transition for the blur effect */
-}
-
-.btn-tvas {
-    color: white;
-    background-color: #fe8d41;
-    border-color: #fe8d41;
-}
-
-.btn-tvas:hover {
-    color: white;
-    background-color: #ff9933;
-    border-color: #ff9933;
-}
-
-.bg-tvas {
-    background-color: #fe8d41;
-}
-</style>
-
 <script>
-import swal from 'sweetalert'
-
+import ContactForm from '@/components/Contact/ContactForm.vue'
+import LoaderOverlay from '@/components/Contact/LoaderOverlay.vue'
 export default {
-    methods: {
-        submitForm() {
-            // Serialize form data into FormData
-            function showLoader() {
-                const overlay = document.getElementById("overlay");
-                overlay.style.display = "block";
-
-                const loader = document.getElementById("loader");
-                loader.style.display = "block";
-            }
-            function hideLoader() {
-                const overlay = document.getElementById("overlay");
-                overlay.style.display = "none";
-
-                const loader = document.getElementById("loader");
-                loader.style.display = "none";
-            }
-
-            showLoader();
-
-            const formElement = document.getElementById("myForm");
-            const formData = new FormData(formElement);
-
-            // Send a POST request to the Google Apps Script URL using Fetch API
-            fetch("https://script.google.com/macros/s/AKfycbxtV2QPZwsh5T8EwkCfBn7H6CKTnjgAus3cJEF9QWFiPLXGPAhSeuRkyKPif3dilfWl/exec", {
-                method: "POST",
-                body: formData,
-            })
-                .then(response => {
-                    hideLoader(); // Hide loader on fetch response
-
-                    // Handle the response as needed
-                    if (response.ok) {
-                        // Form submitted successfully
-                        swal({
-                            icon: "success",
-                            title: "Submitted",
-                            text: "Your form is successfully submitted",
-                        });
-                        formElement.reset();
-                        return false;
-                    } else {
-                        // Handle errors if the submission fails
-                        swal({
-                            icon: "error",
-                            title: "Error",
-                            text: "Form not submitted",
-                        });
-                    }
-                })
-                .catch(error => {
-                    hideLoader(); // Hide loader on fetch error
-                    console.error("An error occurred:", error);
-                });
-        }
+    components: {
+        ContactForm,
+        LoaderOverlay
     }
-};
+}
 </script>

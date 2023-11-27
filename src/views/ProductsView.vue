@@ -18,7 +18,7 @@
                     <div class="card shadow-sm border border-dark rounded">
                         <img :src="require('@/assets/photos/products/' + i.url)" alt="" draggable="false" class="rounded">
                         <div class="card-body text-center">
-                            <h4 class="card-text">{{ i.name }}</h4>
+                            <h6 class="card-text text-nowrap">{{ i.name }}</h6>
                         </div>
                     </div>
                 </div>
@@ -98,7 +98,7 @@ export default {
                     url: 'masala.jpg'
                 },
                 {
-                    name: 'Coriander Green Leaf Powder',
+                    name: 'Coriander Leaf Powder',
                     url: 'masala.jpg'
                 },
                 {

@@ -1,6 +1,7 @@
 <template>
   <Header />
   <main class="container-fluid">
+    <LoaderOverlay />
     <router-view class="animated-page"/>
   </main>
   <Footer />
@@ -153,6 +154,28 @@ main {
   }
 }
 
+.btn-tvas {
+    color: white;
+    background-color: #fe8d41;
+    border-color: #fe8d41;
+}
+
+.btn-tvas:hover {
+    color: white;
+    background-color: #ff9933;
+    border-color: #ff9933;
+}
+
+.btn-tvas:active {
+    color: white;
+    background-color: #ff9933;
+    border-color: #ff9933;
+}
+
+.bg-tvas {
+    background-color: #fe8d41;
+}
+
 nav {
   padding: 30px;
 }
@@ -170,12 +193,14 @@ nav a.router-link-exact-active {
 <script>
 import HeaderView from './components/HeaderView.vue';
 import FooterView from './components/FooterView.vue';
+import LoaderOverlay from './components/Contact/LoaderOverlay.vue';
 
 export default {
   name: 'App',
   components: {
     'Header': HeaderView,
-    'Footer': FooterView
+    'Footer': FooterView,
+    LoaderOverlay
   }
 }
 </script>
