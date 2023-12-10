@@ -1,8 +1,9 @@
+
 <template>
   <div class="container">
     <h1 class="fw-bold my-5">Meet Our Team</h1>
     <div class="row">
-      <div class="col-12 col-sm-6 col-md-4" v-for="(i, j) in this.team" :key="j">
+      <div class="col-12 col-sm-6 col-md-4" v-for="(i, j) in team" :key="j">
         <div class="our-team border border-dark rounded">
           <div class="picture">
             <img :src="require('@/assets/photos/team/' + i.path)" class="img-fluid">
@@ -10,13 +11,37 @@
           <div class="team-content">
             <h3 class="name">{{ i.name }}</h3>
             <h4 class="title">{{ i.role }}</h4>
+            <!-- Button to trigger the modal -->
+            <button @click="showModal(i)" type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#teamMemberModal">
+              View Details
+            </button>
+          </div>  
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal to view team members details -->
+    <div class="modal fade" id="teamMemberModal" tabindex="-1" aria-labelledby="teamMemberModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="teamMemberModalLabel">Team Member Details</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <!-- Dummy data in the modal body -->
+            <p>Name: {{ selectedTeamMember.name }}</p>
+            <p>Role: {{ selectedTeamMember.role }}</p>
+            <!-- Add more details as needed -->
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
           </div>
         </div>
       </div>
     </div>
   </div>
 </template>
-
 <style scoped>
 .our-team {
   padding: 30px 0 40px;
@@ -113,6 +138,8 @@
   color: white;
   transition: all 0.3s ease 0s;
   text-decoration: none;
+
+
 }
 
 .our-team .social li a:hover {
@@ -120,11 +147,14 @@
   background-color: #f7f5ec;
 }
 </style>
+
 <script>
 export default {
   name: 'TeamCard',
   data() {
     return {
+      modalVisible: false,
+      selectedTeamMember: {}, // to store the selected team member data
       team: [
         {
           path: 'RKPandey.jpg',
@@ -144,5 +174,10 @@ export default {
       ],
     };
   },
+  methods: {
+    showModal(member) {
+      this.selectedTeamMember = member;
+    }
+  }
 }
 </script>
