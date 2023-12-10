@@ -11,7 +11,6 @@
           <div class="team-content">
             <h3 class="name">{{ i.name }}</h3>
             <h4 class="title">{{ i.role }}</h4>
-            <!-- Button to trigger the modal -->
             <button @click="showModal(i)" type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#teamMemberModal">
               View Details
             </button>
@@ -20,7 +19,6 @@
       </div>
     </div>
 
-    <!-- Modal to view team members details -->
     <div class="modal fade" id="teamMemberModal" tabindex="-1" aria-labelledby="teamMemberModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -29,10 +27,8 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <!-- Dummy data in the modal body -->
             <p>Name: {{ selectedTeamMember.name }}</p>
             <p>Role: {{ selectedTeamMember.role }}</p>
-            <!-- Add more details as needed -->
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -154,7 +150,7 @@ export default {
   data() {
     return {
       modalVisible: false,
-      selectedTeamMember: {}, // to store the selected team member data
+      selectedTeamMember: {},
       team: [
         {
           path: 'RKPandey.jpg',
