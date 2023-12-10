@@ -45,7 +45,6 @@ export default {
   },
   mounted() {
     this.checkVisitCount();
-    this.setupStatcounter();
   },
 
   methods: {
