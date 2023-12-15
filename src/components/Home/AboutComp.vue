@@ -17,7 +17,7 @@
           </div>
           <p>
             We the Tikuri Vaidic Agro Services LLP are startup in organic products production and trading. We are
-            operating in hybrid model of business. We produce veriety of organic honey , quality spices for every home
+            operating in hybrid model of business. We produce veriety of organic honey, quality spices for every home
             kitchen, natural fertilizer for our farmers to enable them produce organic grains, fruits, vegetables, pulses
             etc. We are providing consultancy services also for zero budget farming techniques, increasing farmers income
             through various methods of farming practices.
