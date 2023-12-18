@@ -107,15 +107,15 @@ export default {
                 },
                 {
                     name: 'Katerni Chuda',
-                    url: 'masala.jpg'
+                    url: 'makhana.jpg'
                 },
                 {
                     name: 'Plain Makhana',
-                    url: 'masala.jpg'
+                    url: 'makhana.jpg'
                 },
                 {
                     name: 'Roasted Makhana',
-                    url: 'masala.jpg'
+                    url: 'makhana.jpg'
                 },
                 {
                     name: 'Tulsi Honey',
