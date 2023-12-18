@@ -106,6 +106,18 @@ export default {
                     url: 'masala.jpg'
                 },
                 {
+                    name: 'Katerni Chuda',
+                    url: 'masala.jpg'
+                },
+                {
+                    name: 'Plain Makhana',
+                    url: 'masala.jpg'
+                },
+                {
+                    name: 'Roasted Makhana',
+                    url: 'masala.jpg'
+                },
+                {
                     name: 'Tulsi Honey',
                     url: 'honey.jpg'
                 },
