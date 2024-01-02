@@ -15,8 +15,9 @@
                 <!--Google map-->
                 <div class="mb-4">
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7174.07834498979!2d79.09208001205421!3d28.19322481300596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39754b766a94ed39%3A0x50b4c6604508a15e!2sTikuri%2C%20Uttar%20Pradesh%20243726!5e0!3m2!1sen!2sin!4v1701013296152!5m2!1sen!2sin"
-                        width="100%" height="450" style="border:0;" allowfullscreen="true" loading="lazy"
+                        src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3597.2626321571943!2d81.57675457539602!3d25.629407577435295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjXCsDM3JzQ1LjkiTiA4McKwMzQnNDUuNiJF!5e0!3m2!1sen!2sin!4v1704201257929!5m2!1sen!2sin"
+                        width="100%" height="450"   style="border: 2px solid #ddd; border-radius: 10px;"
+                        allowfullscreen="" loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
                 <!--Buttons-->
@@ -24,17 +25,17 @@
                     <div class="col-4">
                         <a class="bg-tvas px-3 py-2 rounded text-white mb-2 d-inline-block"><i
                                 class="bi bi-geo-alt"></i></a>
-                        <p> Your Address ….. </p>
+                        <p> Tikuri Dashrathpur, Uttar Pradesh 230201 </p>
                     </div>
                     <div class="col-4">
                         <a class="bg-tvas px-3 py-2 rounded text-white mb-2 d-inline-block"><i class="bi bi-phone"></i></a>
-                        <p>+91- 90000000</p>
+                        <p><a href="tel:+91 9264499678">+91 9264499678</a></p>
                     </div>
                     <div class="col-4">
                         <a class="bg-tvas px-3 py-2 rounded text-white mb-2 d-inline-block"><i
                                 class="bi bi-envelope"></i></a>
-                        <p> your@gmail.com</p>
-                    </div>
+                                <p><a href="mailto:tikurivaidicas@rediffmail.com">tikurivaidicas@rediffmail.com</a></p>
+                            </div>
                 </div>
             </div>
             <!--Grid column-->
