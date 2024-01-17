@@ -27,7 +27,7 @@
       </li>
     </ul>
     <div class="d-flex justify-content-evenly">
-      <p class="text-body-secondary">© 2023 TVAS</p>
+      <p class="text-body-secondary">© {{ currentYear }} TVAS</p>
      
     </div>
   </footer>
@@ -41,13 +41,18 @@ export default {
   data() {
     return {
       visitCount: 1,
+      currentYear: new Date().getFullYear(),
     };
   },
   mounted() {
+    this.updateYear();
     this.checkVisitCount();
   },
 
   methods: {
+    updateYear() {
+      this.currentYear = new Date().getFullYear();
+    },
     checkVisitCount() {
       if (localStorage.getItem("visitCount") === null) {
         localStorage.setItem("visitCount", 1);

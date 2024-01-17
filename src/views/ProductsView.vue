@@ -134,12 +134,60 @@ export default {
                     url: 'honey.jpg'
                 },
                 {
-                    name: 'Lychee Honey',
+                    name: 'Leechi Honey',
                     url: 'honey.jpg'
                 },
                 {
                     name: 'Mustard Honey',
                     url: 'honey.jpg'
+                },
+                {
+                    name: 'Dhania Honey',
+                    url: 'honey.jpg'
+                },
+                {
+                    name: 'Mixed Honey',
+                    url: 'honey.jpg'
+                },
+                {
+                    name: 'Vermicompost',
+                    url: 'fertilizers.jpg'
+                },
+                {
+                    name: 'Enriched Vermicompost',
+                    url: 'fertilizers.jpg'
+                },
+                {
+                    name: 'Super Enriched Vermicompost',
+                    url: 'fertilizers.jpg'
+                },
+                {
+                    name: 'Vermi Wash/Vermi Cola',
+                    url: 'fertilizers.jpg'
+                },
+                {
+                    name: 'Ghan Jeevamrit',
+                    url: 'fertilizers.jpg'
+                },
+                {
+                    name: 'Jeevamrit',
+                    url: 'fertilizers.jpg'
+                },
+                {
+                    name: 'Agni Astra',
+                    url: 'fertilizers.jpg'
+                },
+                {
+                    name: 'Bramha Astra',
+                    url: 'fertilizers.jpg'
+                },
+                {
+                    name: 'Das Parni Astra',
+                    url: 'fertilizers.jpg'
+                },
+                {
+                    name: 'Neem Astra',
+                    url: 'fertilizers.jpg'
                 },
             ],
         };

@@ -29,6 +29,8 @@
           <div class="modal-body">
             <p>Name: {{ selectedTeamMember.name }}</p>
             <p>Role: {{ selectedTeamMember.role }}</p>
+            <p v-if="selectedTeamMember.qualifications">Qualifications: {{ selectedTeamMember.qualifications }}</p>
+            <p v-if="selectedTeamMember.experience">Experience: {{ selectedTeamMember.experience }}</p>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -155,18 +157,38 @@ export default {
         {
           path: 'RKPandey.jpg',
           name: 'Raj Kumar Pandey',
-          role: 'Director Technical'
+          role: 'Director Technical',
+          qualifications: 'MD, (Engr, MBA)',
+          experience: 'Ex- CEO NTPC/ Nabinagar. Leadership certificate Holder from Harvard Business School, USA. Expert of control system Toshiba Japan , Siemens,  H&B, Germany,  Metso Automation ,USA. 39 Years experience as power professional. 2 years organic farming and producer of natural fertilizer.',
         },
         {
           path: 'LalJiDwivedi.jpg',
           name: 'Lal Jee Dwivedi',
-          role: 'Director Operations'
+          role: 'Director Operations',
+          qualifications: 'Science Graduate',
+          experience: '28 years Experience of MNC Companies worked at  different locations and different roles.',
         },
         {
           path: 'RKMishra.jpg',
           name: 'Dr. R.K. Mishra',
-          role: '#N/A'
-        }
+          role: 'Director Technical',
+          qualifications: 'PG, B. Ed., Ph. D (Both Botany & Geography on Arsenic contamination in groundwater and surfacewater)',
+          experience: 'Expertise in waste management, water quality, beekeeping and honey production, Mushroom production, vermicomposting ecology and environment & plants.',
+        },
+        {
+          path: 'placeholder.jpg',
+          name: 'Priyanka Shukla',
+          role: 'Honorary Director',
+          qualifications: '',
+          experience: '',
+        },
+        {
+          path: 'placeholder.jpg',
+          name: 'Rashmi Shukla',
+          role: 'Honorary Director',
+          qualifications: '',
+          experience: '',
+        },
       ],
     };
   },

@@ -91,19 +91,19 @@
                 services: [
                     {
                         title: 'Spices',
-                        description: 'Minima consequatur architecto eaque assumenda ipsam itaque quia eum in doloribus debitis impedit ut minus tenetur corrupti excepturi ullam.',
+                        description: 'Click the button below to explore our wide range of spices',
                         path: 'spice.png',
                         url: '/products'
                     },
                     {
                         title: 'Honey',
-                        description: 'Minima consequatur architecto eaque assumenda ipsam itaque quia eum in doloribus debitis impedit ut minus tenetur corrupti excepturi ullam.',
+                        description: 'Click the button below to explore our wide range of honey products',
                         path: 'honey.png',
                         url: '/products'
                     },
                     {
                         title: 'Fertilizers',
-                        description: 'Minima consequatur architecto eaque assumenda ipsam itaque quia eum in doloribus debitis impedit ut minus tenetur corrupti excepturi ullam.',
+                        description: 'Click the button below to explore our wide range of fertilizers',
                         path: 'fertilizer.png',
                         url: '/products'
                     },
